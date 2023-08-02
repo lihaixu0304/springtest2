@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--使用构造方法注入bean-->
+    <bean id="userDaoBean" class="com.springtest2.day01.dao.UserDao"></bean>
+    <bean id="vipDaoBean" class="com.springtest2.day01.dao.VipDao"></bean>
+    <bean id="custBean" class="com.springtest2.day01.service.Custoerervice">
+        <!--下面的方式只能任选其一-->
+        <!--方式一：采用参数索引-->
+        <constructor-arg index="0" ref="userDaoBean"/>
+        <constructor-arg index="1" ref="vipDaoBean"/>
+        <!--方式二，使用name属性-->
+        <constructor-arg name="userDao" ref="userDaoBean"/>
+        <constructor-arg name="vipDao" ref="vipDaoBean"/>
+        <!--方式三，不指定name或者index，直接让spring自动根据类型匹配-->
+        <constructor-arg ref="vipDaoBean"/>
+        <constructor-arg ref="userDaoBean"/>
+    </bean>
+</beans>
