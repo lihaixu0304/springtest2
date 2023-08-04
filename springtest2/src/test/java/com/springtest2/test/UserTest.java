@@ -11,6 +11,7 @@ import com.springtest2.day02.Phone;
 import com.springtest2.day02.Smell;
 import com.springtest2.day02.Story;
 import com.springtest2.day02.service.StuDaoImpl;
+import com.springtest2.day03.MyDataSources;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -110,6 +111,15 @@ public class UserTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("application-auto-bytype.xml");
         StuDaoImpl stuDaoImplBean = context.getBean("stuDaoImplBean", StuDaoImpl.class);
         stuDaoImplBean.stuDaoInsert();
+    }
+    /*
+    * 读取数据库
+    * */
+    @Test
+    public void datasource(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("jdbc-properties.xml");
+        MyDataSources dataSource = context.getBean("dataSource", MyDataSources.class);
+        System.out.println(dataSource);
     }
 }
 
