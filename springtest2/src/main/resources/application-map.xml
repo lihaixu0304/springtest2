@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="smellBean" class="com.springtest2.day02.Smell">
+        <property name="address">
+            <map>
+                <entry key="12" value="大西渠"></entry>
+                <entry key="13" value="大东渠"></entry>
+                <entry key="14" value="大北渠"></entry>
+            </map>
+        </property>
+    </bean>
+
+</beans>

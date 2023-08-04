@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--list集合-->
+    <bean id="foodsBean" class="com.springtest2.day02.Foods">
+        <property name="name">
+            <array>
+                <value>鸡排</value>
+                <value>鸡腿</value>
+                <value>螺蛳粉</value>
+            </array>
+        </property>
+        <property name="taste">
+            <array>
+                <value>香辣</value>
+                <value>孜然</value>
+                <value>酸臭</value>
+            </array>
+        </property>
+        <property name="money">
+            <array>
+                <value>10</value>
+                <value>5</value>
+                <value>18</value>
+            </array>
+        </property>
+    </bean>
+</beans>
