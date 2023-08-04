@@ -10,6 +10,7 @@ import com.springtest2.day02.Foods;
 import com.springtest2.day02.Phone;
 import com.springtest2.day02.Smell;
 import com.springtest2.day02.Story;
+import com.springtest2.day02.service.StuDaoImpl;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -93,6 +94,22 @@ public class UserTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("application-map.xml");
         Smell smellBean = context.getBean("smellBean", Smell.class);
         System.out.println(smellBean);
+    }
+    /*
+    * 根据byName名称完成自动注入
+    * */
+    @Test
+    public void byName(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("application-auto-byname.xml");
+        com.springtest2.day02.dao.UserDao userDao = context.getBean("userDao", com.springtest2.day02.dao.UserDao.class);
+        userDao.insert();
+    }
+
+    @Test
+    public void byType(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("application-auto-bytype.xml");
+        StuDaoImpl stuDaoImplBean = context.getBean("stuDaoImplBean", StuDaoImpl.class);
+        stuDaoImplBean.stuDaoInsert();
     }
 }
 
