@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--
+bean的实例化方式2，通过简单工厂中的工厂方法进行实例化
+class要写工厂方法所在类的路径
+-->
+    <bean id="bankBean" class="com.springtest2.day05.beanway2.BankFactory" factory-method="get"/>
+
+</beans>

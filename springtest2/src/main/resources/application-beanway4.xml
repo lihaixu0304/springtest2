@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--bean的实例化方式3，通过实例化的类实现FactoryBean接口进行实例化-->
+
+    <bean id="sonFactory" class="com.springtest2.day05.beanway4.SonFactory"/>
+</beans>

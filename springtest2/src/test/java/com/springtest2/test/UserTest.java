@@ -17,6 +17,11 @@ import com.springtest2.day04.abstrctfactory.WeaPon;
 import com.springtest2.day04.abstrctfactory.WeaPonFactory;
 import com.springtest2.day04.simplefactory.Weapon;
 import com.springtest2.day04.simplefactory.WeaponFactory;
+import com.springtest2.day05.beanway1.Animal;
+import com.springtest2.day05.beanway2.Bank;
+import com.springtest2.day05.beanway3.Cook;
+import com.springtest2.day05.beanway4.Son;
+import com.springtest2.day05.beanway4.SonFactory;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -138,6 +143,33 @@ public class UserTest {
         WeaPonFactory weaPonFactory = new AkFactory();
         WeaPon weaPon = weaPonFactory.get();
         weaPon.shoot();
+    }
+    @Test
+    public void beanway1(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("application-beanway1.xml");
+        Animal animalBean = context.getBean("animalBean", Animal.class);
+        animalBean.eat();
+    }
+
+    @Test
+    public void beanway2(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("application-beanway2.xml");
+        Bank bankBean = context.getBean("bankBean", Bank.class);
+        System.out.println(bankBean);
+    }
+
+    @Test
+    public void beanway3(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("application-beanway3.xml");
+        Cook cook= context.getBean("cookBean", Cook.class);
+        System.out.println(cook);
+    }
+
+    @Test
+    public void beanway4(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("application-beanway4.xml");
+        Son sonFactory = context.getBean("sonFactory", Son.class);
+        System.out.println(sonFactory);
     }
 }
 
