@@ -12,6 +12,8 @@ import com.springtest2.day02.Smell;
 import com.springtest2.day02.Story;
 import com.springtest2.day02.service.StuDaoImpl;
 import com.springtest2.day03.MyDataSources;
+import com.springtest2.day04.simplefactory.Weapon;
+import com.springtest2.day04.simplefactory.WeaponFactory;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -121,5 +123,12 @@ public class UserTest {
         MyDataSources dataSource = context.getBean("dataSource", MyDataSources.class);
         System.out.println(dataSource);
     }
+
+    @Test
+    public void weapon(){
+        Weapon weapon = WeaponFactory.get("Ak");
+        weapon.attack();
+    }
+
 }
 
