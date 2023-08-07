@@ -12,6 +12,9 @@ import com.springtest2.day02.Smell;
 import com.springtest2.day02.Story;
 import com.springtest2.day02.service.StuDaoImpl;
 import com.springtest2.day03.MyDataSources;
+import com.springtest2.day04.abstrctfactory.AkFactory;
+import com.springtest2.day04.abstrctfactory.WeaPon;
+import com.springtest2.day04.abstrctfactory.WeaPonFactory;
 import com.springtest2.day04.simplefactory.Weapon;
 import com.springtest2.day04.simplefactory.WeaponFactory;
 import org.junit.Test;
@@ -130,5 +133,11 @@ public class UserTest {
         weapon.attack();
     }
 
+    @Test
+    public void weapon1(){
+        WeaPonFactory weaPonFactory = new AkFactory();
+        WeaPon weaPon = weaPonFactory.get();
+        weaPon.shoot();
+    }
 }
 
