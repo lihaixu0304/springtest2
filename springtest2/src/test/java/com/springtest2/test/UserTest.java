@@ -22,6 +22,7 @@ import com.springtest2.day05.beanway2.Bank;
 import com.springtest2.day05.beanway3.Cook;
 import com.springtest2.day05.beanway4.Son;
 import com.springtest2.day05.beanway4.SonFactory;
+import com.springtest2.day06.beanlive5.Water;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -170,6 +171,15 @@ public class UserTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("application-beanway4.xml");
         Son sonFactory = context.getBean("sonFactory", Son.class);
         System.out.println(sonFactory);
+    }
+
+    @Test
+    public void beanLive5(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("application-beanlive5.xml");
+        Water waterBean = context.getBean("waterBean", Water.class);
+        System.out.println("第四步：执行bean");
+        ClassPathXmlApplicationContext context1 = (ClassPathXmlApplicationContext) context;
+        context1.close();
     }
 }
 

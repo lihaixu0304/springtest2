@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--bean的生命周期五步法：
+第一步：实例化bean
+第二步：bean的属性赋值
+第三步：初始化bean,initBean()方法
+第四步：执行bean
+第五步：销毁bean，destoryBean()方法
+-->
+    <bean id="waterBean" class="com.springtest2.day06.beanlive5.Water" init-method="initBean" destroy-method="destoryBean">
+        <!--bean属性赋值-->
+        <property name="name" value="李海旭"/>
+    </bean>
+</beans>
