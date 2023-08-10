@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--
+bean的生命周期7步法
+1，实例化bean
+2，bean属性赋值
+bean开始初始化
+3，bean初始化
+bean初始化完成
+4，执行bean
+5，销毁bean
+-->
+    <bean id="airBean" class="com.springtest2.day06.beanlive7.Air" init-method="initBean" destroy-method="destoryBean">
+        <property name="name" value="bean的生命周期"/>
+    </bean>
+    <bean class="com.springtest2.day06.beanlive7.Log"/>
+</beans>

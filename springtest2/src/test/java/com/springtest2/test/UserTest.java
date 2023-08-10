@@ -22,7 +22,9 @@ import com.springtest2.day05.beanway2.Bank;
 import com.springtest2.day05.beanway3.Cook;
 import com.springtest2.day05.beanway4.Son;
 import com.springtest2.day05.beanway4.SonFactory;
+import com.springtest2.day06.beanlive10.Flower;
 import com.springtest2.day06.beanlive5.Water;
+import com.springtest2.day06.beanlive7.Air;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -173,11 +175,36 @@ public class UserTest {
         System.out.println(sonFactory);
     }
 
+    /*
+    * bean的生命周期5步法
+    * */
     @Test
-    public void beanLive5(){
+    public void beanLive5() {
         ApplicationContext context = new ClassPathXmlApplicationContext("application-beanlive5.xml");
         Water waterBean = context.getBean("waterBean", Water.class);
         System.out.println("第四步：执行bean");
+        ClassPathXmlApplicationContext context1 = (ClassPathXmlApplicationContext) context;
+        context1.close();
+    }
+/*
+* bean的生命周期7步法
+* */
+    @Test
+    public void beanLive7(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("application-beanlive7.xml");
+        Air airBean = context.getBean("airBean", Air.class);
+        System.out.println("4，执行bean");
+        ClassPathXmlApplicationContext context1 = (ClassPathXmlApplicationContext) context;
+        context1.close();
+    }
+    /*
+    * bean的生命周期10步法
+    * */
+    @Test
+    public void beanLive10(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("application-beanlive10.xml");
+        Flower flowerBean = context.getBean("flowerBean", Flower.class);
+        System.out.println("8,执行bean");
         ClassPathXmlApplicationContext context1 = (ClassPathXmlApplicationContext) context;
         context1.close();
     }
