@@ -25,7 +25,9 @@ import com.springtest2.day05.beanway4.SonFactory;
 import com.springtest2.day06.beanlive10.Flower;
 import com.springtest2.day06.beanlive5.Water;
 import com.springtest2.day06.beanlive7.Air;
+import com.springtest2.day06.manage.Kfc;
 import org.junit.Test;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -208,5 +210,23 @@ public class UserTest {
         ClassPathXmlApplicationContext context1 = (ClassPathXmlApplicationContext) context;
         context1.close();
     }
+
+    /*
+    * 让bean管理自己创建的对象
+    * */
+    @Test
+    public void manageObject(){
+        //创建对象
+        Kfc kfc = new Kfc();
+        System.out.println(kfc);
+        //创建默认列表的bean工厂
+        DefaultListableBeanFactory dlbf = new DefaultListableBeanFactory();
+        //注册bean
+        dlbf.registerSingleton("kfcBean",kfc);
+        //获取bean
+        Kfc kfcBean = dlbf.getBean("kfcBean", Kfc.class);
+        System.out.println(kfcBean);
+    }
+
 }
 
