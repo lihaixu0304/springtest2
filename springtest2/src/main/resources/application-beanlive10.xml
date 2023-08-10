@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--
+bean的生命周期，10步法
+1.实例化Bean2.Bean属性赋值
+3.bean名字:userBean
+3.类加载器: jdk.internal.loader.classLoaders$AppClassLoader@63947c6b
+3.Bean工L厂 : org.springframework.beans. factory. support.DefaultListableBeanFactory@147ed70f:4.Bean后处理器的before方法执行，即将开始初始化
+5.afterPropertiesSet执行
+6.初始化Bean
+7.Bean后处理器的after方法执行，已完成初始化
+8.使用Bean
+9.DisposableBean destroy
+10.销毁Bean
+-->
+    <bean id="flowerBean" class="com.springtest2.day06.beanlive10.Flower" init-method="initBean" destroy-method="destoryBean">
+        <property name="name" value="bean生命周期10步法"/>
+    </bean>
+    <bean class="com.springtest2.day06.beanlive10.Log"/>
+</beans>
