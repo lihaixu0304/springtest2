@@ -26,6 +26,10 @@ import com.springtest2.day06.beanlive10.Flower;
 import com.springtest2.day06.beanlive5.Water;
 import com.springtest2.day06.beanlive7.Air;
 import com.springtest2.day06.manage.Kfc;
+import com.springtest2.day09.Choose;
+import com.springtest2.day09.DiWay1;
+import com.springtest2.day09.DiWay2;
+import com.springtest2.day09.DiWay3;
 import org.junit.Test;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.ApplicationContext;
@@ -227,6 +231,39 @@ public class UserTest {
         Kfc kfcBean = dlbf.getBean("kfcBean", Kfc.class);
         System.out.println(kfcBean);
     }
-
+    /*
+    * 选择实例化
+    * */
+    @Test
+    public void choose() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("application-choose.xml");
+    }
+    /*
+    * @Value注解注入简单类型值的方式一
+    * */
+    @Test
+    public void DiWay01() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("application-di01.xml");
+        DiWay1 diWay01 = context.getBean("diWay1", DiWay1.class);
+        System.out.println(diWay01);
+    }
+    /*
+    * @Value注解注入简单类型值的方式二
+    * */
+    @Test
+    public void DiWay02() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("application-di01.xml");
+        DiWay2 diWay02 = context.getBean("diWay2", DiWay2.class);
+        System.out.println(diWay02);
+    }
+    /*
+    * @Value注解注入简单类型值的方式三
+    * */
+    @Test
+    public void DiWay03() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("application-di01.xml");
+        DiWay3 diWay03 = context.getBean("diWay3", DiWay3.class);
+        System.out.println(diWay03);
+    }
 }
 
