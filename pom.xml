@@ -7,6 +7,7 @@
     <modules>
         <module>springtest2</module>
         <module>springtest3</module>
+      <module>springtest4</module>
     </modules>
     <version>1.0-SNAPSHOT</version>
   <name>springtest Maven Webapp</name>
@@ -43,6 +44,11 @@
       <groupId>jakarta.annotation</groupId>
       <artifactId>jakarta.annotation-api</artifactId>
       <version>2.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>1.2.15</version>
     </dependency>
   </dependencies>
   <build>

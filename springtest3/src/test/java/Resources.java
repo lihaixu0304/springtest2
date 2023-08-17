@@ -13,6 +13,7 @@ import java.lang.annotation.Target;
 public class Resources {
     @Test
     public void resources(){
+        //PROJECT WRAITH
         ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
         UpdateService updateService = context.getBean("updateService", UpdateService.class);
         updateService.updateMessage();
