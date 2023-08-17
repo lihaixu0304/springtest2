@@ -6,6 +6,7 @@
   <packaging>pom</packaging>
     <modules>
         <module>springtest2</module>
+        <module>springtest3</module>
     </modules>
     <version>1.0-SNAPSHOT</version>
   <name>springtest Maven Webapp</name>
