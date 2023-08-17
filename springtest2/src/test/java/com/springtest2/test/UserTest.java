@@ -30,6 +30,7 @@ import com.springtest2.day09.Choose;
 import com.springtest2.day09.DiWay1;
 import com.springtest2.day09.DiWay2;
 import com.springtest2.day09.DiWay3;
+import com.springtest2.day10.service.StudentService;
 import org.junit.Test;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.ApplicationContext;
@@ -265,5 +266,15 @@ public class UserTest {
         DiWay3 diWay03 = context.getBean("diWay3", DiWay3.class);
         System.out.println(diWay03);
     }
+    /*
+    * @Resources注解的使用
+    * */
+    @Test
+    public void resources(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("application-resources.xml");
+        StudentService studentService = context.getBean("studentService", StudentService.class);
+        studentService.deleteStudent();
+    }
+
 }
 
