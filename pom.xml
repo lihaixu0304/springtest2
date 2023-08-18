@@ -9,47 +9,67 @@
         <module>springtest3</module>
       <module>springtest4</module>
         <module>springtest5</module>
+      <module>springtest6</module>
     </modules>
     <version>1.0-SNAPSHOT</version>
   <name>springtest Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+    <!--junit单元测试-->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <!--spring核心文件-->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
       <version>6.0.4</version>
     </dependency>
+    <!--lombok-->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.18.26</version>
     </dependency>
+    <!--日志依赖-->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
       <version>2.19.0</version>
     </dependency>
+    <!--日志依赖-->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-slf4j2-impl</artifactId>
       <version>2.19.0</version>
       <scope>test</scope>
     </dependency>
+    <!--注解依赖-->
     <dependency>
       <groupId>jakarta.annotation</groupId>
       <artifactId>jakarta.annotation-api</artifactId>
       <version>2.1.1</version>
     </dependency>
+    <!--数据源依赖-->
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>druid</artifactId>
       <version>1.2.15</version>
+    </dependency>
+    <!--动态代理依赖-->
+    <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib</artifactId>
+      <version>3.3.0</version>
+    </dependency>
+    <!--spring-aspect依赖，不使用spring自带的-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
+      <version>6.0.4</version>
     </dependency>
   </dependencies>
   <build>

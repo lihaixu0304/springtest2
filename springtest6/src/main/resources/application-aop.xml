@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context.xsd
+                            http://www.springframework.org/schema/aop
+                            http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--spring aop 方式一：使用注解方式；在bean中配置context和aop-->
+    <context:component-scan base-package="com.springtest.aop"/>
+    <!--
+    aop管理前置通知,开启自动代理
+    proxy-target-class:"true":使用cglib开启自动代理
+    proxy-target-class:"false":默认的方式，使用jdk开启自动代理，没有接口作为通知的时候，也会使用cglib生成代理类
+    -->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+</beans>
