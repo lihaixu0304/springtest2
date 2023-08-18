@@ -8,6 +8,7 @@
         <module>springtest2</module>
         <module>springtest3</module>
       <module>springtest4</module>
+        <module>springtest5</module>
     </modules>
     <version>1.0-SNAPSHOT</version>
   <name>springtest Maven Webapp</name>
