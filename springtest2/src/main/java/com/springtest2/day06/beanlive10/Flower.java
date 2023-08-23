@@ -35,6 +35,7 @@ public class Flower implements BeanNameAware, BeanClassLoaderAware, BeanFactoryA
         return "Flower{" +
                 "name='" + name + '\'' +
                 '}';
+
     }
 
     @Override

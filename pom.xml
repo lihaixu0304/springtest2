@@ -12,6 +12,8 @@
       <module>springtest6</module>
         <module>springtest-jdkproxy</module>
         <module>springtest-cglib-proxy</module>
+      <module>springtest-aop</module>
+
     </modules>
     <version>1.0-SNAPSHOT</version>
   <name>springtest Maven Webapp</name>
