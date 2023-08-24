@@ -13,6 +13,7 @@
         <module>springtest-jdkproxy</module>
         <module>springtest-cglib-proxy</module>
       <module>springtest-aop</module>
+      <module>springtest-mybatis</module>
 
     </modules>
     <version>1.0-SNAPSHOT</version>
@@ -23,6 +24,12 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
       <version>6.0.4</version>
+    </dependency>
+    <!--mysql驱动-->
+    <dependency>
+      <groupId>com.mysql</groupId>
+      <artifactId>mysql-connector-j</artifactId>
+      <version>8.0.31</version>
     </dependency>
     <!--mybatis-->
     <dependency>
